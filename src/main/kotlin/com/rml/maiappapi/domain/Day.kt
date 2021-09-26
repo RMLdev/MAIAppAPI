@@ -4,6 +4,7 @@ import com.rml.maiappapi.responses.DayResponse
 import com.rml.maiappapi.responses.LessonResponse
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 data class Day(
     val date: Date,
@@ -14,6 +15,6 @@ data class Day(
         val weekFormat = SimpleDateFormat("EEE")
         val date = dateFormat.format(this.date)
         val dayOfWeek = weekFormat.format(this.date)
-        return DayResponse(date, dayOfWeek, lessons.map { it.toResponse() } as ArrayList<LessonResponse>)
+        return DayResponse(date, dayOfWeek, lessons.map (Lesson::toResponse) as ArrayList<LessonResponse>)
     }
 }

@@ -22,4 +22,12 @@ class ScheduleController {
     ): ResponseEntity<Any> {
         return ResponseEntity.ok(repository.getSchedule(groupName, week).map { it.toResponse() })
     }
+
+    @RequestMapping(value = ["/getTeacherSchedule"], method = [(RequestMethod.GET)])
+    fun getTeacherSchedule(
+        @RequestParam("guid") guid: String,
+        @RequestParam("week") week: Int
+    ):ResponseEntity<Any> {
+        return ResponseEntity.ok(repository.getTestTeacherSchedule(guid, week).map { it.toResponse() })
+    }
 }
