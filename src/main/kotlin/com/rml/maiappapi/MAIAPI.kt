@@ -1,11 +1,11 @@
-package com.rml.demo
+package com.rml.maiappapi
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class DemoApplication
+class MAIAPI
 
 fun main(args: Array<String>) {
-    runApplication<DemoApplication>(*args)
+    runApplication<MAIAPI>(*args)
 }
